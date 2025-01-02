@@ -1,0 +1,19 @@
+# Rider and IDE files
+.idea/
+*.iml
+
+# Build-generated files
+/bin/
+/obj/
+*.dll
+*.exe
+*.pdb
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log and Cache files
+*.log
+.vs/
+*.user
