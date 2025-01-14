@@ -2,27 +2,13 @@
 
 class Player
 {
-    private int playerNumber;
-    private char playerSign;
+    public int playerNumber { get; }
+    public char playerSign { get; }
 
-    public void setPlayerNumber(int playerNumber)
+    public Player(int playerNumber, char playerSign)
     {
         this.playerNumber = playerNumber;
-    }
-
-    public int getPlayerNumber()
-    {
-        return playerNumber;
-    }
-
-    public void setPlayerSign(char playerSign)
-    {
         this.playerSign = playerSign;
-    }
-
-    public char getPlayerSign()
-    {
-        return this.playerSign;
     }
 }
 
@@ -56,12 +42,8 @@ class Program
     public static int gameStart()
     {
         //create the players
-        Player player1 = new Player();
-        player1.setPlayerNumber(1);
-        player1.setPlayerSign('o');
-        Player player2 = new Player();
-        player2.setPlayerNumber(2);
-        player2.setPlayerSign('x');
+        Player player1 = new Player(1, 'o');
+        Player player2 = new Player(2, 'x');
 
         int result;
         int turn = 1;
@@ -70,8 +52,8 @@ class Program
 
         do
         {
-            int turnChangeTo = turn % 2 == 1 ? player1.getPlayerNumber() : player2.getPlayerNumber();
-            char sign = turnChangeTo == 1 ? player1.getPlayerSign() : player2.getPlayerSign();
+            int turnChangeTo = turn % 2 == 1 ? player1.playerNumber : player2.playerNumber;
+            char sign = turnChangeTo == 1 ? player1.playerSign : player2.playerSign;
             bool checkRepeated = false;
 
             setField();
